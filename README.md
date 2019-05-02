@@ -17,7 +17,12 @@ Prepare cluster:
 > docker network create -d bridge hadoop
 > docker-compose run namenode format.sh
 ```
-*NOTE: this step should build the base and daemon images if you have not already*
+Build the base and daemon images:
+
+```sh
+> docker-compose -f ./base/docker-compose.yml build
+> docker-compose -f ./daemon/docker-compose.yml build
+```
 
 Start cluster:
 ```sh

@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  base:
+    image: base
+    build:
+      context: .
+      args:
+        BASE_OS: centos
+        HADOOP_VER: 2.9.2
+        JAVA_VER: 8

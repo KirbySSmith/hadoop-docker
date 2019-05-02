@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  daemon:
+    image: daemon
+    build:
+      context: .

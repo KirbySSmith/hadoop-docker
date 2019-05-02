@@ -2,20 +2,6 @@ version: '3'
 
 services:
 
-  base:
-    image: base
-    build:
-      context: ./base
-      args:
-        BASE_OS: centos
-        HADOOP_VER: 2.9.2
-        JAVA_VER: 8
-
-  daemon:
-    image: daemon
-    build:
-      context: ./daemon
-
   namenode:
     image: daemon
     hostname: namenode
