@@ -1,7 +1,7 @@
 #!/bin/bash
-#HADOOP_VER=${1:-2.9.2}
-#DEST=${2:-/usr/local/hadoop2}
-#USER=${3:-$(whoami)}
+HADOOP_VER=${1:-2.9.2}
+DEST=${2:-/usr/local/hadoop2}
+USER=${3:-$(whoami)}
 
 echo "========== BUILDING DOCKER BASE and DAEMON IMAGES =========="
 docker-compose -f ./base/docker-compose.yml build
