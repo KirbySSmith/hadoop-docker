@@ -7,6 +7,7 @@ services:
     hostname: namenode
     command: start.sh hadoop namenode
     ports:
+      - 9000:9000
       - 50070:50070
     volumes:
       - ./daemon/format.sh:/usr/local/bin/format.sh
@@ -16,10 +17,16 @@ services:
   datanode1:
     image: daemon
     hostname: datanode1
-    command: start.sh hadoop datanode
+    command: start.sh hadoop datanode yarn nodemanager
     ports:
       - 50075:50075
+      - 50010:50010
+      - 50020:50020
+      - 8040:8040
+      - 8041:8041
       - 8042:8042
+      - 37327:37327
+      - "51000-51050:51000-51050"
     volumes:
       - ./logs/datanode1:/usr/local/apache/hadoop/logs
       - ./data/datanode1:/usr/local/apache/hadoop/data/dn
@@ -51,6 +58,10 @@ services:
     command: start.sh yarn resourcemanager
     ports:
       - 8088:8088
+      - 8030:8030
+      - 8031:8031
+      - 8032:8032
+      - 8033:8033
     volumes:
       - ./logs/resourcemanager:/usr/local/apache/hadoop/logs
 
@@ -60,6 +71,9 @@ services:
     command: start.sh mr-jobhistory historyserver
     ports:
       - 19888:19888
+      - 10020:10020
+      - 10033:10033
+      - 8118:8118
     volumes:
       - ./logs/historyserver:/usr/local/apache/hadoop/logs
 

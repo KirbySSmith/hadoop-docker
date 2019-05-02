@@ -21,4 +21,16 @@
         <name>mapreduce.framework.name</name>
         <value>yarn</value>
     </property>
+    <property>
+        <name>mapreduce.jobhistory.address</name>
+        <value>historyserver:10020</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.webapp.address</name>
+        <value>historyserver:19888</value>
+    </property>
+    <property>
+        <name>yarn.app.mapreduce.am.job.client.port-range</name>
+        <value>51000-51050</value>
+    </property>
 </configuration>
