@@ -1,6 +1,6 @@
 #!/bin/bash
 HADOOP_VER=${1:-2.9.2}
-DEST=${2:-/usr/local/hadoop2}
+DEST=${2:-/usr/local/hadoop}
 USER=${3:-$(whoami)}
 
 echo "========== BUILDING DOCKER BASE and DAEMON IMAGES =========="
@@ -18,7 +18,7 @@ curl -o ~/Downloads/hadoop-$HADOOP_VER.tar.gz https://archive.apache.org/dist/ha
 
 echo "========== UNPACKING HADOOP ($HADOOP_VER) =========="
 sudo mkdir $DEST
-sudo chown -R $USER /usr/local/hadoop2
+sudo chown -R $USER $DEST
 tar -C $DEST -zxvf ~/Downloads/hadoop-$HADOOP_VER.tar.gz
 sudo ln -s $DEST/hadoop-$HADOOP_VER $DEST/hadoop
 
