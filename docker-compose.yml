@@ -24,16 +24,16 @@ services:
       - ./logs/datanode1:/usr/local/apache/hadoop/logs
       - ./data/datanode1:/usr/local/apache/hadoop/data/dn
 
-  datanode2:
-    image: daemon
-    hostname: datanode2
-    command: start.sh hadoop datanode yarn nodemanager
-    ports:
-      - 50076:50075
-      - 8043:8042
-    volumes:
-      - ./logs/datanode2:/usr/local/apache/hadoop/logs
-      - ./data/datanode2:/usr/local/apache/hadoop/data/dn
+#  datanode2:
+#    image: daemon
+#    hostname: datanode2
+#    command: start.sh hadoop datanode yarn nodemanager
+#    ports:
+#      - 50076:50075
+#      - 8043:8042
+#    volumes:
+#      - ./logs/datanode2:/usr/local/apache/hadoop/logs
+#      - ./data/datanode2:/usr/local/apache/hadoop/data/dn
 
   secondarynamenode:
     image: daemon
