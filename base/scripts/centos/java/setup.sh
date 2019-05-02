@@ -17,3 +17,5 @@ case $JAVA_VER in
 esac
 
 yum -y install java-1.$JAVA_VER.0-openjdk-devel
+
+echo "export JAVA_HOME=/usr/lib/jvm/java" >> /home/$USER/.bashrc
